@@ -1,0 +1,64 @@
+:root{
+    --index:calc(1vh + 1vw);
+}
+
+.wrapper{
+    width: 80vw;
+    height: 100vh;
+
+}
+
+/*Стили для фильтров*/
+
+.filtrs{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 100%;
+    padding: calc(var(--index) * 0.7) 0;
+}
+
+select{
+    font-size: calc(var(--index) * 0.6);
+    font-weight: bold;
+    background-color: #cacac1ab;
+    border-radius: 7px;
+    color: rgba(0, 0, 0, 0.61);
+    border: 0px solid #9b9b94;
+}
+
+
+.month{
+    margin-left: calc(var(--index) * 1);
+}
+
+/*Стили для календаря*/
+
+.calendar__wrapper{
+    width: fit-content;
+    height: fit-content;
+    padding: calc(var(--index) * 1);
+    border-radius: 25px;
+    border: 4px solid #cacac1ab;
+    background-color: #ebebe285;
+    box-shadow: 0 5px 15px #cacac1ab;
+}
+
+.calendar{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    width: fit-content;
+    grid-gap: 1px;
+   
+}
+
+.calendar__item{
+    width: calc(var(--index) * 4);
+    height: calc(var(--index) * 4);
+    background-color: rgba(131, 94, 218, 0.637);
+    color: #fff;
+    text-align: right;
+    padding: calc(var(--index) * 0.5);
+    line-height: 100%;
+}
+
