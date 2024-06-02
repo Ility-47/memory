@@ -54,13 +54,6 @@ const Header = () => {
     if (activeUser) {
       setActualUser(activeUser);
     }
-        // users.map((item) => {
-            
-        //     if(item.isLogin){
-        //         actualUser = item
-        //     }
-        
-        // })
     }, users)
     
     return(

@@ -46,7 +46,7 @@ const HeaderLk = () =>{
             const file = event.target.files[0]
             setImage(file)
             fileReader.readAsDataURL(file)
-           // onChange(event.target.value) было так, но теперь не так, но пусть будет, хуй его знает как куда чего
+           // onChange(event.target.value) было так, но теперь не так, но пусть будет
         }
     }
 

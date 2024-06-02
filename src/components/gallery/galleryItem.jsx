@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import ReactPlayer from 'react-player'
 
-//Пизженный компонент
+
 const ScrollLock = ({ isLocked }) => {
     useEffect(() => {
       const body = document.querySelector('body');
@@ -94,16 +94,12 @@ const GalleryItemMedia = ({value, id}) =>{
             
                 {isPhoto && 
                     memory[id - 1].photo.map((item1, index1) =>(
-
                         <div style={{ backgroundImage: `url(${item1})` }} key={index1}></div>
-                        // <img onClick={onClickSlider} src={item1} key={index1} alt=""/>
-                    
                     ))     
                 }
        
                 {isVideo && 
                     memory[id - 1].video.map((item2, index2) =>(
-                        // <video src={item2} key={index2} alt=""/>
                         <ReactPlayer 
                         url={item2} 
                         key={index2}  
@@ -120,21 +116,6 @@ const GalleryItemMedia = ({value, id}) =>{
         </div>
     )
 }
-//основной компонент
-// const GalleryItem = ({id}) =>{
-//     const [isFiltr, setFiltr] = useState('')
-//     const handleFiltr = (value) =>{
-//         setFiltr(value)
-//     }
-//     return(
-//         <div className={s.container}>
-//             <h1 className={s.title}>{memory[id-1].name}</h1>
-//             {/* тут прокинуты пропсы через три пизды колено чтобы работал фильтр */}
-//             <GalleryItemFiltr  onChange={handleFiltr} /> 
-//             <GalleryItemMedia id={id}  value={isFiltr} />
-//         </div>
-//     )
-// }
 
 const GalleryItem = () => {
     const { id } = useParams();

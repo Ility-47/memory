@@ -48,9 +48,10 @@ code {
 }
 
 dialog{
-  left: 33%;
-  top: 27%;
+  left: 32%;
+  top: 26%;
   line-height: 250%;
+  padding: calc(var(--index) *1);
 }
 
 dialog h2{

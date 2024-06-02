@@ -10,7 +10,6 @@ const AddZone =  ({onChange, selectValue}) =>{
 
     const fileReader = new FileReader()
     fileReader.onloadend = (event) =>{
-        //setImageURL(fileReader.result)
         imageURL.map(item => {
             const base64String = item;
             setBase64Array(base64String);
@@ -21,6 +20,7 @@ const AddZone =  ({onChange, selectValue}) =>{
 
     let results = []
     const handleFileChange = async (event) => {
+        
         //для вывода названия в блок
         const filesArray = Array.from(event.target.files); // Преобразуем FileList в массив
         setSelectedFile(filesArray);
@@ -112,6 +112,12 @@ const AddParams = ({value, onChange}) =>{
         }
     }
 
+    const onClickCalse = (e) => {
+        e.preventDefault()
+        refInput.current.value = '' //стираем текст из инпута
+        refTextarea.current.value = '' //стираем текст из текстареа
+        onChange(false)
+    }
     const onClickSend = (e) =>{
         let photoValue = [], videoValue = []
         value.map(item  => {
@@ -123,6 +129,7 @@ const AddParams = ({value, onChange}) =>{
                 console.log('фотова')
             }    
         })
+
 
         
        
@@ -173,7 +180,7 @@ const AddParams = ({value, onChange}) =>{
                 <div className={s.counter}>{isTextareaValue.length}/200</div>
             </div>
             <div className={s.buttons}>
-                <button className={cancelBtn}>Отмена</button>
+                <button className={cancelBtn} onClick={onClickCalse}>Отмена</button>
                 <button className={sendBtn} onClick={onClickSend}>Создать</button>
             </div>
         </div>
